@@ -3,7 +3,7 @@ import WhatToDoIssue from '../lib/whatToDoIssue.json';
 
 export default function Dashboard() {
     return(
-        <main className=''>
+        <main className='md:w-1/2 md:mx-auto'>
             <h1>Dashboard</h1>
             <p>{WhatToDoIssue.pickTrash.content}</p>
         </main>
