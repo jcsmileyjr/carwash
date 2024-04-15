@@ -1,0 +1,30 @@
+{
+    "issueID": 5000,
+	"date": "2024-04-15",
+	"logType": "action",
+	"content": null,
+	"pickTrash": {
+			"content": "Pick up trash",
+			"checked": false
+	},
+	"cleanVacuum": {
+        "content": "Clean out bottom of vaccum",
+        "checked": false
+    },
+    "dumpTrashCans": {
+			"content": "Dump trash cans",
+			"checked": false
+	},
+    "mowLawn": {
+			"content": "Cut or weed the lawn",
+			"checked": false
+	},
+   "checkVacuumHoses": {
+			"content": "Check vacuums hose’s heads for obstructions",
+			"checked": false
+	},
+    "checkBayEquipment": {
+			"content": "Check each bay wand or brush to ensure it works.",
+			"checked": false
+	}
+}
