@@ -1,11 +1,11 @@
 import WhatToDoIssue from '../lib/whatToDoIssue.json';
+import CTAGroup from '../components/ctaGroup/ctaGroup';
 // import IssueType from '../Types/issue';
 
 export default function Dashboard() {
     return(
         <main className='md:w-1/2 md:mx-auto'>
-            <h1>Dashboard</h1>
-            <p>{WhatToDoIssue.pickTrash.content}</p>
+            <CTAGroup />
         </main>
     )
 }
