@@ -2,30 +2,30 @@
 export default interface Issue {
     issueID: number,
 	date: string,
-	logType: 'maintenance' | 'action',
+	logType: string,
 	content: string | null,
 	pickTrash: {
-			content: 'Pick up trash',
+			content: string,
 			checked: boolean
 	},
 	cleanVacuum: {
-        content: 'Pick up trash',
+        content: string,
         checked: boolean
     },
     dumpTrashCans: {
-			content: 'Pick up trash',
+			content: string,
 			checked: boolean
 	},
     mowLawn: {
-			content: 'Pick up trash',
+			content: string,
 			checked: boolean
 	},
     checkVacuumHoses: {
-			content: 'Pick up trash',
+			content: string,
 			checked: boolean
 	},
     checkBayEquipment: {
-			content: 'Pick up trash',
+			content: string,
 			checked: boolean
 	},
 };
