@@ -17,7 +17,7 @@ const Issues = ({issue}: {issue: Issue}) => {
                     const action = issue[key];
                     return (
                         <div className='flex flex-row justify-start gap-4 my-2' key={key}>
-                            <Image priority={false} src={LightBulb} width={20} height={5} alt="" className='' />
+                            <Image priority={false} src={LightBulb} width={20} height={5} alt="" className='h-6' />
                             <p>{action.content}</p>
                         </div>
                     )
