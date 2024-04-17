@@ -6,10 +6,14 @@ import CaretDown from '../../../images/caret-down-icon.png';
 import Issues from '../issues/issues';
 import Issue from '../../Types/issue';
 
+/**
+ * Renders the Maintenance Toggle component used in the Logs component.
+ *
+ * @param {Issue} issue - The issue object containing maintenance information.
+ * @return {JSX.Element} The JSX element representing the Maintenance Toggle component.
+ */
 const MaintenanceToggle = ({issue} : {issue: Issue}) => {
     const [openLog, setOpenLog] = useState(false);
-    console.log(issue);
-
     return (
         <div>
             <details open={openLog} onToggle={() => setOpenLog(!openLog)}>

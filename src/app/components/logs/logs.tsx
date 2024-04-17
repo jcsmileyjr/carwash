@@ -1,7 +1,3 @@
-
-
-// import Image from 'next/image';
-// import QuestionMark from '../../../images/question-mark-icon.png';
 import Issue from '../../Types/issue';
 import MaintenanceToggle from '../maintenanceToggle/maintenanceToggle';
 
@@ -30,7 +26,6 @@ const sortIssuesByIssueID = (logs : Issue[]) => {
  */
 const Logs = ({maintenanceLogs} : {maintenanceLogs: Issue[]}) => {
     const sortedMaintenanceLogs = sortIssuesByIssueID(maintenanceLogs);
-
     return (
         <section className="flex flex-col border-dashed border-t-2 border-slate-500 mx-12">
             <h1 className='text-xl font-bold text-center mt-4'> Maintenance Logs </h1>
