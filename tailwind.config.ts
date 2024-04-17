@@ -15,7 +15,11 @@ const config: Config = {
       },
       colors: {
         'goldYellow': '#F2E205',
-      }
+      },
+      content: {
+        'caret-up': 'url("./src/images/caret-up-icon.png")',
+        'caret-down': 'url("./src/images/caret-down-icon.png")',
+      },      
     },
   },
   plugins: [],
