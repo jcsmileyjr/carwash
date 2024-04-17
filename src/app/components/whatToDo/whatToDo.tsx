@@ -7,8 +7,39 @@ import CaretUp from '../../../images/caret-up-icon.png';
 import CaretDown from '../../../images/caret-down-icon.png';
 import {useState} from 'react';
 
+/**
+ * Creates an expanded Issue object based on the initial WhatToDoIssue.
+ * @return {Object} The expanded issue object.
+ */
+function createexpandIssue() {
+    const expandIssue = JSON.parse(JSON.stringify(WhatToDoIssue));
+    expandIssue.pickTrash.checked = true;
+    expandIssue.cleanVacuum.checked = true;
+    expandIssue.dumpTrashCans.checked = true;
+    expandIssue.checkBayEquipment.checked = true;
+    return expandIssue;
+}
+
+/**
+ * Creates a collapsed Issue object based on the initial WhatToDoIssue.
+ * @return {Object} The collapsed issue object.
+ */
+function createCollapseIssue() {
+    const collapseIssue = JSON.parse(JSON.stringify(WhatToDoIssue));
+    collapseIssue.mowLawn.checked = true; 
+    collapseIssue.checkVacuumHoses.checked = true;
+    return collapseIssue;
+}
+
+
+/**
+ * Renders the 'What To Do' section with expandable details for issues.
+ * @return {JSX.Element} The JSX element representing the 'What To Do' section.
+ */
 export default function WhatToDo() {
     const [openSummary, setOpenSummary] = useState(false);
+    const expandIssue = createexpandIssue();
+    const collapseIssue = createCollapseIssue();
 
     return (
         <section className="flex flex-col border-dashed border-t-2 border-slate-500">
@@ -27,9 +58,9 @@ export default function WhatToDo() {
                         <Image priority={false} src={QuestionMark} width={10} height={5} alt="" className='' />
                         <p className='text-xs'>Expand to see All</p>
                     </div>
-                    <Issues issue={WhatToDoIssue} summaryList={true} />
+                    <Issues issue={expandIssue} imageType='lightbulb' />
                 </summary>
-                <Issues issue={WhatToDoIssue} summaryList={false}  />
+                <Issues issue={collapseIssue} imageType='lightbulb' />
             </details>
         </section>
     )
