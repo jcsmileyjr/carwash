@@ -12,28 +12,37 @@ import Hammer from '../../../images/hammer-icon.png';
  * @return {JSX.Element} The rendered list of issues.
  */
 const Issues = ({issue, imageType}: {issue: Issue, imageType: string}) => {
-    return (
-        <div className='mx-12'>
-            {Object.keys(issue).map((key) => {
-                if (key === 'pickTrash' || key === 'cleanVacuum' || key === 'dumpTrashCans' || key === 'checkBayEquipment' || key === 'mowLawn' || key === 'checkVacuumHoses') {
-                    const action = issue[key];
-                    if(action.checked === true) {
-                        return (
-                            <div className='flex flex-row justify-start gap-4 my-2' key={key}>
-                                {imageType === 'hammer' &&
-                                    <Image priority={false} src={Hammer} width={20} height={5} alt="" className='h-6' />
-                                }
-                                {imageType === 'lightbulb' &&
-                                    <Image priority={false} src={LightBulb} width={20} height={5} alt="" className='h-6' />
-                                }
-                                <p>{action.content}</p>
-                            </div>
-                        )
+    if (issue.logType === "maintenance") {
+        return (
+            <div className='flex flex-row justify-start gap-4 my-2 mx-12' key={issue.issueID}>
+                <Image priority={false} src={Hammer} width={20} height={5} alt="" className='h-6 self-center' />
+                <p>{issue.content}</p>
+            </div>
+        )
+    } else {
+        return (
+            <div className='mx-12'>
+                {Object.keys(issue).map((key) => {
+                    if (key === 'pickTrash' || key === 'cleanVacuum' || key === 'dumpTrashCans' || key === 'checkBayEquipment' || key === 'mowLawn' || key === 'checkVacuumHoses') {
+                        const action = issue[key];
+                        if(action.checked === true) {
+                            return (
+                                <div className='flex flex-row justify-start gap-4 my-2' key={key}>
+                                    {imageType === 'hammer' &&
+                                        <Image priority={false} src={Hammer} width={20} height={5} alt="" className='h-6' />
+                                    }
+                                    {imageType === 'lightbulb' &&
+                                        <Image priority={false} src={LightBulb} width={20} height={5} alt="" className='h-6' />
+                                    }
+                                    <p>{action.content}</p>
+                                </div>
+                            )
+                        }
                     }
-                }
-            })}
-        </div>
-    )
+                })}
+            </div>
+        )
+    }
 }
 
 export default Issues;

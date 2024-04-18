@@ -1,7 +1,7 @@
 "use client"
 import WhatToDoIssue from '../../lib/whatToDoIssue.json';
 import Image from 'next/image';
-import QuestionMark from '../../../images/question-mark-icon.png';
+// import QuestionMark from '../../../images/question-mark-icon.png';
 import Issues from '../issues/issues';
 import CaretUp from '../../../images/caret-up-icon.png';
 import CaretDown from '../../../images/caret-down-icon.png';
@@ -55,7 +55,7 @@ export default function WhatToDo() {
                         }                        
                     </div>
                     <div className='flex justify-center gap-2'>
-                        <Image priority={false} src={QuestionMark} width={10} height={5} alt="" className='' />
+                        {/* <Image priority={false} src={QuestionMark} width={10} height={5} alt="" className='' /> */}
                         <p className='text-xs'>Expand to see All</p>
                     </div>
                     <Issues issue={expandIssue} imageType='lightbulb' />
