@@ -3,15 +3,14 @@ import WhatToDo from '../components/whatToDo/whatToDo';
 import Logs from '../components/logs/logs';
 // import DummyIssues from '../lib/dummyIssues.json';
 import Issue from '../Types/issue';
+import getMaintenanceData from '../utils/getMaintenanceData';
 
-async function getMaintenanceData () {
-    const response = await fetch('http://localhost:3000/dashboard/api');  
-    const data = await response.json();  
-    return data;
-}
-
-export default async function Dashboard() { 
+export default async function Dashboard({newIssue}: {newIssue: Issue}) {
     const maintenanceData = await getMaintenanceData() as Issue[];
+    if(Object.keys(newIssue).length !== 0) {
+        const foundIssue = JSON.parse(Object.keys(newIssue)[0]);
+        maintenanceData.push(foundIssue)
+    }
     return (
         <main className='md:w-1/2 md:mx-auto'>
             <CTAGroup />
@@ -20,7 +19,3 @@ export default async function Dashboard() {
         </main>
     );
 }
-
-
-// Notes
-// export default function Dashboard({WhatToDoIssue}: {WhatToDoIssue: IssueType}) {
