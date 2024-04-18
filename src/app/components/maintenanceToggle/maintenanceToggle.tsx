@@ -18,7 +18,7 @@ const MaintenanceToggle = ({issue} : {issue: Issue}) => {
         <div>
             <details open={openLog} onToggle={() => setOpenLog(!openLog)}>
                 <summary className="list-none">
-                    <div className='flex justify-start relative mt-4'>
+                    <div className='flex justify-start relative mt-4 mx-12'>
                         <h1 className='text-xl font-bold'> {issue.date} </h1>
                         {!openLog && <Image priority={false} src={CaretUp} width={15}  alt="" className='absolute top-2 left-40' />}
                         {openLog && <Image priority={false} src={CaretDown} width={15}  alt="" className='absolute top-2 left-40' />}

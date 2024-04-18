@@ -27,7 +27,7 @@ const sortIssuesByIssueID = (logs : Issue[]) => {
 const Logs = ({maintenanceLogs} : {maintenanceLogs: Issue[]}) => {
     const sortedMaintenanceLogs = sortIssuesByIssueID(maintenanceLogs);
     return (
-        <section className="flex flex-col border-dashed border-t-2 border-slate-500 mx-12">
+        <section className="flex flex-col border-dashed border-t-2 border-slate-500">
             <h1 className='text-xl font-bold text-center mt-4'> Maintenance Logs </h1>
             <div className='flex justify-center gap-2'>
                 {/* <Image priority={false} src={QuestionMark} width={10} height={5} alt="" className='' /> */}

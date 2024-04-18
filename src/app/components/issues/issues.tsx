@@ -14,7 +14,7 @@ import Hammer from '../../../images/hammer-icon.png';
 const Issues = ({issue, imageType}: {issue: Issue, imageType: string}) => {
     if (issue.logType === "maintenance") {
         return (
-            <div className='flex flex-row justify-start gap-4 my-2' key={issue.issueID}>
+            <div className='flex flex-row justify-start gap-4 my-2 mx-12' key={issue.issueID}>
                 <Image priority={false} src={Hammer} width={20} height={5} alt="" className='h-6 self-center' />
                 <p>{issue.content}</p>
             </div>
