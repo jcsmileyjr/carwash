@@ -11,21 +11,19 @@ import {v4 as uuidv4} from 'uuid'; // NPM module that creates a random ID number
 
 
 /**
- * Creates a default issue object with the specified log type, issue ID, and current date.
+ * Creates a default issue object with the specified current date.
  *
  * @return {Issue} The default issue object.
  */
 function createDefaultIssue() {
     let defaultIssue = JSON.parse(JSON.stringify(WhatToDoIssue));
-    defaultIssue.logType = "action";
-    const randomID = uuidv4();
-    defaultIssue.issueID = 1000; //randomID;
     defaultIssue.date = moment().format("YYYY-MM-DD");
     return defaultIssue;
 }
 
 export default function Maintenance () {    
     const defaultIssue = createDefaultIssue();
+    const randomID = uuidv4();
 
     const [date, setDate] = useState(defaultIssue.date);
     const [pickTrash, setPickTrash] = useState(false);
@@ -73,7 +71,7 @@ export default function Maintenance () {
                 appData={
                     {
                         date: date,
-                        issueID: defaultIssue.issueID, // change out later with random ID
+                        issueID: randomID,
                         logType: "action",
                         content: null,
                         pickTrash: {

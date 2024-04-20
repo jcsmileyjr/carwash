@@ -1,6 +1,6 @@
 
 export default interface Issue {
-    issueID: number,
+    issueID: string,
 	date: string,
 	logType: string,
 	content: string | null,
