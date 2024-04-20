@@ -9,7 +9,12 @@ import { useState} from 'react';
 import moment from 'moment'; // NPM module that converts date objects to strings
 import {v4 as uuidv4} from 'uuid'; // NPM module that creates a random ID number
 
-// Testing below
+
+/**
+ * Creates a default issue object with the specified log type, issue ID, and current date.
+ *
+ * @return {Issue} The default issue object.
+ */
 function createDefaultIssue() {
     let defaultIssue = JSON.parse(JSON.stringify(WhatToDoIssue));
     defaultIssue.logType = "action";
