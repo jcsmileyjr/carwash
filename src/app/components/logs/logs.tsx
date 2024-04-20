@@ -1,15 +1,16 @@
 import Issue from '../../Types/issue';
 import MaintenanceToggle from '../maintenanceToggle/maintenanceToggle';
+import moment from 'moment'; // NPM module that converts date objects to strings
 
 /**
- * Sorts an array of Issue objects by their issueID property in descending order.
+ * Sorts an array of Issue objects by their date property in descending order.
  * If the sorted array has more than 30 elements, it returns a slice of the first 30 elements.
  *
  * @param {Issue[]} logs - The array of Issue objects to be sorted.
  * @return {Issue[]} - The sorted array of Issue objects, or a slice of the first 30 elements if the sorted array has more than 30 elements.
  */
 const sortIssuesByIssueID = (logs : Issue[]) => {
-    let sortedLogs = logs.sort((a, b) => b.issueID - a.issueID)
+    let sortedLogs = logs.sort((a, b) => moment(b.date, 'DD-MM-YYYY').diff(moment(a.date, 'DD-MM-YYYY')));
     if (sortedLogs.length > 30) {
         return sortedLogs.slice(0,30);
     } else {
