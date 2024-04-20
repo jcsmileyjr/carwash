@@ -1,6 +1,6 @@
 [
     {
-        "issueID": 1,
+        "issueID": "1",
         "date": "2024-04-10",
         "logType": "action",
         "content": null,
@@ -30,7 +30,7 @@
         }
     },
     {
-        "issueID": 2,
+        "issueID": "2",
         "date": "2024-04-11",
         "logType": "action",
         "content": null,
@@ -60,7 +60,7 @@
         }
     },
     {
-        "issueID": 3,
+        "issueID": "3",
         "date": "2024-04-13",
         "logType": "action",
         "content": null,
@@ -90,7 +90,7 @@
         }
     },
     {
-        "issueID": 4,
+        "issueID": "4",
         "date": "2024-04-14",
         "logType": "maintenance",
         "content": "Fixed bay two motor not working. Clear debris from moter caps.",

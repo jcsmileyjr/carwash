@@ -1,13 +1,13 @@
 import CTAGroup from '../components/ctaGroup/ctaGroup';
 import WhatToDo from '../components/whatToDo/whatToDo';
 import Logs from '../components/logs/logs';
-// import DummyIssues from '../lib/dummyIssues.json';
 import Issue from '../Types/issue';
 import getMaintenanceData from '../utils/getMaintenanceData';
 
 export default async function Dashboard({newIssue}: {newIssue: Issue}) {
     const maintenanceData = await getMaintenanceData() as Issue[];
-    if(Object.keys(newIssue).length !== 0) {
+    if (Object.keys(newIssue).length !== 0) {
+        // Not sure why but the newIssue returned is the propety of an empty object.
         const foundIssue = JSON.parse(Object.keys(newIssue)[0]);
         maintenanceData.push(foundIssue)
     }
