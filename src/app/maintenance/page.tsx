@@ -1,7 +1,7 @@
 "use client"
 import AppHeader from "../components/appHeader/appHeader";
 import CTAButton from "../components/ctaButton/ctaButton";
-import Issue from '../Types/issue';
+import BackButton from "../components/backButton/backButton";
 import Image from 'next/image';
 import Calendar from '../../images/calendar.png';
 import WhatToDoIssue from '../lib/whatToDoIssue.json';
@@ -101,6 +101,7 @@ export default function Maintenance () {
                 </div> 
             </div>
             <CTAButton content="Done" route="/" appData={handleSubmit()} />
+            <BackButton content="Don't Save, Go Back" route="/"/>
         </main>
     );
 }
