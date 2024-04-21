@@ -73,31 +73,31 @@ export default function Maintenance () {
             <div className="m-12 flex flex-col gap-8">
                 <div className='flex flex-row'>
                     <Image priority={false} src={Calendar} width={40} height={30} alt="" className='h-8 mr-4 self-end' />
-                    <input type="date" value={date} onChange={(e) => setDate(e.target.value)}  className="border-b-4 border-black w-full"/>
+                    <input aria-label="Date" type="date" value={date} onChange={(e) => setDate(e.target.value)}  className="border-b-4 border-black w-full"/>
                 </div>
                 <div className='flex flex-row align-center'>
-                    <input type="checkbox" checked={pickTrash} onChange={(e) => setPickTrash(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow"/>
-                    <label className='pl-4 w-4/5'>{defaultIssue['pickTrash'].content}</label>
+                    <input id="pickTrash" type="checkbox" checked={pickTrash} onChange={(e) => setPickTrash(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow"/>
+                    <label htmlFor="pickTrash" className='pl-4 w-4/5'>{defaultIssue['pickTrash'].content}</label>
                 </div>
                 <div className='flex flex-row align-center'>
-                    <input type="checkbox" checked={cleanVacuum} onChange={(e) => setCleanVacuum(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow"/>  
-                    <label className='pl-4 w-4/5'>{defaultIssue['cleanVacuum'].content}</label>
+                    <input id="cleanVacuum" type="checkbox" checked={cleanVacuum} onChange={(e) => setCleanVacuum(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow"/>  
+                    <label htmlFor="cleanVacuum"  className='pl-4 w-4/5'>{defaultIssue['cleanVacuum'].content}</label>
                 </div>
                 <div className='flex flex-row align-center'>
-                    <input type="checkbox" checked={dumpTrashCans} onChange={(e) => setDumpTrashCans(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow"/>
-                    <label className='pl-4 w-4/5'>{defaultIssue['dumpTrashCans'].content}</label>
+                    <input id="dumpTrashCans" type="checkbox" checked={dumpTrashCans} onChange={(e) => setDumpTrashCans(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow"/>
+                    <label htmlFor="dumpTrashCans" className='pl-4 w-4/5'>{defaultIssue['dumpTrashCans'].content}</label>
                 </div>
                 <div className='flex flex-row align-center'>
-                    <input type="checkbox" checked={checkBayEquipment} onChange={(e) => setCheckBayEquipment(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow"/>
-                    <label className='pl-4 w-4/5'>{defaultIssue['checkBayEquipment'].content}</label>
+                    <input id="checkBayEquipment" type="checkbox" checked={checkBayEquipment} onChange={(e) => setCheckBayEquipment(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow"/>
+                    <label htmlFor="checkBayEquipment" className='pl-4 w-4/5'>{defaultIssue['checkBayEquipment'].content}</label>
                 </div>
                 <div className='flex flex-row align-center'>
-                    <input type="checkbox" checked={mowLawn} onChange={(e) => setMowLawn(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow"/>
-                    <label className='pl-4 w-4/5'>{defaultIssue['mowLawn'].content}</label>
+                    <input id="mowLawn" type="checkbox" checked={mowLawn} onChange={(e) => setMowLawn(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow"/>
+                    <label htmlFor="mowLawn" className='pl-4 w-4/5'>{defaultIssue['mowLawn'].content}</label>
                 </div>
                 <div className='flex flex-row align-center'>
-                    <input type="checkbox" checked={checkVacuumHoses} onChange={(e) => setCheckVacuumHoses(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow"/>
-                    <label className='pl-4 w-4/5'>{defaultIssue['checkVacuumHoses'].content}</label>
+                    <input id="checkVacuumHoses" type="checkbox" checked={checkVacuumHoses} onChange={(e) => setCheckVacuumHoses(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow"/>
+                    <label htmlFor="checkVacuumHoses" className='pl-4 w-4/5'>{defaultIssue['checkVacuumHoses'].content}</label>
                 </div> 
             </div>
             <CTAButton content="Done" route="/" appData={handleSubmit()} />
