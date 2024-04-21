@@ -3,7 +3,7 @@ import CTAButton from '../ctaButton';
 
 describe('CTAButton', () => {
     it('renders correctly', () => {
-        render(<CTAButton content="Test" />);
+        render(<CTAButton content="Test" route="maintenance" />);
         expect(screen.getByText('Test')).toBeInTheDocument();
     });
 });
