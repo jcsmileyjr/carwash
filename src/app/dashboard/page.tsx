@@ -4,13 +4,13 @@ import Logs from '../components/logs/logs';
 import Issue from '../Types/issue';
 import getMaintenanceData from '../utils/getMaintenanceData';
 
-export default async function Dashboard({newIssue}: {newIssue: Issue}) {
+export default async function Dashboard({newIssue}: {newIssue?: string}) {
     const maintenanceData = await getMaintenanceData() as Issue[];
-    if (Object.keys(newIssue).length !== 0) {
-        // Not sure why but the newIssue returned is the propety of an empty object.
-        const foundIssue = JSON.parse(Object.keys(newIssue)[0]);
-        maintenanceData.push(foundIssue)
+    if (newIssue !== "" && newIssue !== undefined) {
+        const convertedIssueToJSON = JSON.parse(newIssue);
+        maintenanceData.push(convertedIssueToJSON)
     }
+    
     return (
         <main className='md:w-1/2 md:mx-auto'>
             <CTAGroup />

@@ -22,8 +22,7 @@ function createDefaultIssue() {
 }
 
 export default function Maintenance () {    
-    const defaultIssue = createDefaultIssue();
-    const randomID = uuidv4();
+    let defaultIssue = createDefaultIssue();
 
     const [date, setDate] = useState(defaultIssue.date);
     const [pickTrash, setPickTrash] = useState(false);
@@ -32,6 +31,40 @@ export default function Maintenance () {
     const [checkBayEquipment, setCheckBayEquipment] = useState(false);
     const [mowLawn, setMowLawn] = useState(false);
     const [checkVacuumHoses, setCheckVacuumHoses] = useState(false);
+
+    const handleSubmit = () => {
+       const results = {
+            "issueID":  uuidv4(),
+            "date":date,
+            "logType": "action",
+            "content": null,
+            "pickTrash": {
+                content: defaultIssue['pickTrash'].content,
+                checked: pickTrash
+            },
+            "cleanVacuum": {
+                content: defaultIssue['cleanVacuum'].content,
+                checked: cleanVacuum
+            },
+            "dumpTrashCans": {
+                content: defaultIssue['dumpTrashCans'].content,
+                checked: dumpTrashCans
+            },
+            "checkBayEquipment": {
+                content: defaultIssue['checkBayEquipment'].content,
+                checked: checkBayEquipment
+            },
+            "mowLawn": {
+                content: defaultIssue['mowLawn'].content,
+                checked: mowLawn
+            },
+            "checkVacuumHoses": {
+                content: defaultIssue['checkVacuumHoses'].content,
+                checked: checkVacuumHoses
+            }
+        }
+        return JSON.stringify(results);
+    }
 
     return (
         <main className='md:w-1/2 md:mx-auto flex min-h-screen flex-col p-1 bg-white'>
@@ -67,40 +100,7 @@ export default function Maintenance () {
                     <label className='pl-4 w-4/5'>{defaultIssue['checkVacuumHoses'].content}</label>
                 </div> 
             </div>
-            <CTAButton content="Done" route="/" 
-                appData={
-                    {
-                        date: date,
-                        issueID: randomID,
-                        logType: "action",
-                        content: null,
-                        pickTrash: {
-                            content: defaultIssue['pickTrash'].content,
-                            checked: pickTrash
-                        },
-                        cleanVacuum: {
-                            content: defaultIssue['cleanVacuum'].content,
-                            checked: cleanVacuum
-                        },
-                        dumpTrashCans: {
-                            content: defaultIssue['dumpTrashCans'].content,
-                            checked: dumpTrashCans
-                        },
-                        checkBayEquipment: {
-                            content: defaultIssue['checkBayEquipment'].content,
-                            checked: checkBayEquipment
-                        },
-                        mowLawn: {
-                            content: defaultIssue['mowLawn'].content,
-                            checked: mowLawn
-                        },
-                        checkVacuumHoses: {
-                            content: defaultIssue['checkVacuumHoses'].content,
-                            checked: checkVacuumHoses
-                        }
-                    }
-                } 
-            />
+            <CTAButton content="Done" route="/" appData={handleSubmit()} />
         </main>
     );
 }
