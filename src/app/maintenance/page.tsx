@@ -100,7 +100,7 @@ export default function Maintenance () {
                     <label htmlFor="checkVacuumHoses" className='pl-4 w-4/5'>{defaultIssue['checkVacuumHoses'].content}</label>
                 </div> 
             </div>
-            <CTAButton content="Done" route="/" appData={handleSubmit()} />
+            <CTAButton content="Save" route="/" appData={handleSubmit()} />
             <BackButton content="Don't Save, Go Back" route="/"/>
         </main>
     );
