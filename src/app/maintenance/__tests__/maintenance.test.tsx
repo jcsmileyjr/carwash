@@ -4,7 +4,7 @@ import Maintenance from '../page';
 describe('Maintenance', () => {
     it('should render the maintenance page', () => {
         render(<Maintenance />);
-        const maintenanceHeader = screen.getByText('Maintenance Wizard');
+        const maintenanceHeader = screen.getByText('Record Maintenance');
         expect(maintenanceHeader).toBeInTheDocument();
     });
     it('should render the AppHeader component on the maintenance page', () => {
