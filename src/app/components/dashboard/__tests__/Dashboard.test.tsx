@@ -1,10 +1,10 @@
 import {render, screen} from '@testing-library/react';
-import Dashboard from '../page';
+import Dashboard from '../dashboard';
 
 xdescribe('Dashboard', () => {
     xit('should render the CTAGroup component in the dashboard', () => {
         render(<Dashboard newIssue='' />);
-        const maintenanceWizardButton = screen.getByText('Maintenance Wizard');
+        const maintenanceWizardButton = screen.getByText('Record Maintenance');
         expect(maintenanceWizardButton).toBeInTheDocument();
     });
 
@@ -15,7 +15,7 @@ xdescribe('Dashboard', () => {
     });
 
     xit('should render the Logs component in the dashboard', () => {
-        render(<Dashboard />);
+        render(<Dashboard newIssue='' />);
         const logsButton = screen.getByText('Maintenance Logs');
         expect(logsButton).toBeInTheDocument();
     });
