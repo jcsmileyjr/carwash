@@ -1,8 +1,8 @@
-import CTAGroup from '../components/ctaGroup/ctaGroup';
-import WhatToDo from '../components/whatToDo/whatToDo';
-import Logs from '../components/logs/logs';
-import Issue from '../Types/issue';
-import getMaintenanceData from '../utils/getMaintenanceData';
+import CTAGroup from '../ctaGroup/ctaGroup';
+import WhatToDo from '../whatToDo/whatToDo';
+import Logs from '../logs/logs';
+import Issue from '../../Types/issue';
+import getMaintenanceData from '../../utils/getMaintenanceData';
 
 export default async function Dashboard({newIssue}: {newIssue: string}) {
     const maintenanceData = await getMaintenanceData() as Issue[];

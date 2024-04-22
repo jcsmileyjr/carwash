@@ -1,4 +1,4 @@
-import Dashboard from './dashboard/page';
+import Dashboard from './components/dashboard/dashboard';
 import AppHeader from './components/appHeader/appHeader';
 import Issue from './Types/issue';
 import WhatToDoIssue from './lib/whatToDoIssue.json';
