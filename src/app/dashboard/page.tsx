@@ -4,7 +4,7 @@ import Logs from '../components/logs/logs';
 import Issue from '../Types/issue';
 import getMaintenanceData from '../utils/getMaintenanceData';
 
-export default async function Dashboard({newIssue}: {newIssue?: string}) {
+export default async function Dashboard({newIssue}: {newIssue: string}) {
     const maintenanceData = await getMaintenanceData() as Issue[];
     if (newIssue !== "" && newIssue !== undefined) {
         const convertedIssueToJSON = JSON.parse(newIssue);
