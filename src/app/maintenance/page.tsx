@@ -69,7 +69,7 @@ export default function Maintenance () {
     return (
         <main className='md:w-1/2 md:mx-auto flex min-h-screen flex-col p-1 bg-white'>
             <AppHeader />
-            <h1 className="mt-4 text-xl font-bold underline text-gray-900 text-center">Maintenance Wizard</h1>
+            <h1 className="mt-4 text-xl font-bold underline text-gray-900 text-center">Record Maintenance</h1>
             <div className="m-12 flex flex-col gap-8">
                 <div className='flex flex-row'>
                     <Image priority={false} src={Calendar} width={40} height={30} alt="" className='h-8 mr-4 self-end' />
@@ -100,7 +100,7 @@ export default function Maintenance () {
                     <label htmlFor="checkVacuumHoses" className='pl-4 w-4/5'>{defaultIssue['checkVacuumHoses'].content}</label>
                 </div> 
             </div>
-            <CTAButton content="Done" route="/" appData={handleSubmit()} />
+            <CTAButton content="Save" route="/" appData={handleSubmit()} />
             <BackButton content="Don't Save, Go Back" route="/"/>
         </main>
     );
