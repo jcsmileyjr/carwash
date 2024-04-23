@@ -16,7 +16,7 @@ const Issues = ({issue, imageType}: {issue: Issue, imageType: string}) => {
         return (
             <div className='flex flex-row justify-start gap-4 my-2 mx-12' key={issue.issueID}>
                 <Image priority={false} src={Hammer} width={20} height={5} alt="" className='h-6 self-center' />
-                <p>{issue.content}</p>
+                <p className='text-black'>{issue.content}</p>
             </div>
         )
     } else {
@@ -34,7 +34,7 @@ const Issues = ({issue, imageType}: {issue: Issue, imageType: string}) => {
                                     {imageType === 'lightbulb' &&
                                         <Image priority={false} src={LightBulb} width={20} height={5} alt="" className='h-6' />
                                     }
-                                    <p>{action.content}</p>
+                                    <p className='text-black'>{action.content}</p>
                                 </div>
                             )
                         }

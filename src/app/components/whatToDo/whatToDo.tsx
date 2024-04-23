@@ -46,7 +46,7 @@ export default function WhatToDo() {
             <details open={openSummary} onToggle={() => setOpenSummary(!openSummary)}>
                 <summary className="list-none" >
                     <div className='flex justify-center relative mt-4'>
-                        <h1 className='text-xl font-bold'> What To Do </h1>
+                        <h1 className='text-xl text-black font-bold'> What To Do </h1>
                         {!openSummary &&
                             <Image priority={false} src={CaretUp} width={15}  alt="" className='absolute top-2 end-12' />
                         }
@@ -56,7 +56,7 @@ export default function WhatToDo() {
                     </div>
                     <div className='flex justify-center gap-2'>
                         {/* <Image priority={false} src={QuestionMark} width={10} height={5} alt="" className='' /> */}
-                        <p className='text-xs'>Expand to see All</p>
+                        <p className='text-xs text-black'>Expand to see All</p>
                     </div>
                     <Issues issue={expandIssue} imageType='lightbulb' />
                 </summary>
