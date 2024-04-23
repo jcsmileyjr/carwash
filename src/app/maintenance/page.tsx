@@ -2,6 +2,7 @@
 import AppHeader from "../components/appHeader/appHeader";
 import CTAButton from "../components/ctaButton/ctaButton";
 import BackButton from "../components/backButton/backButton";
+import PageTitle from "../components/pageTitle/pageTitle";
 import Image from 'next/image';
 import Calendar from '../../images/calendar.png';
 import WhatToDoIssue from '../lib/whatToDoIssue.json';
@@ -69,7 +70,7 @@ export default function Maintenance () {
     return (
         <main className='md:w-1/2 md:mx-auto flex min-h-screen flex-col p-1 bg-white'>
             <AppHeader />
-            <h1 className="mt-4 text-xl font-bold underline text-gray-900 text-center">Record Maintenance</h1>
+            <PageTitle content="Record Maintenance" />
             <div className="m-12 flex flex-col gap-8">
                 <div className='flex flex-row'>
                     <Image priority={false} src={Calendar} width={40} height={30} alt="" className='h-8 mr-4 self-end' />
