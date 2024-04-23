@@ -30,7 +30,7 @@ export default function FoundIssue() {
             <div className="m-12 flex flex-col gap-8">
                 <div className='flex flex-row'>
                     <Image priority={false} src={Calendar} width={40} height={30} alt="" className='h-8 mr-4 self-end' />
-                    <input aria-label="Date" type="date" value={date} onChange={(e) => setDate(e.target.value)}  className="border-b-4 border-black w-full"/>
+                    <input aria-label="Date" type="date" value={date} onChange={(e) => setDate(e.target.value)}  className="border-b-4 border-black w-full bg-white text-black"/>
                 </div>
                 <textarea value={content} onChange={(e) => setContent(e.target.value)} cols={40} rows={15} className="border-4 border-black" placeholder="Describe the problem in 100 characters or less. " />
             </div>
