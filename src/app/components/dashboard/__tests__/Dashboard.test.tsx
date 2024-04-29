@@ -10,13 +10,13 @@ xdescribe('Dashboard', () => {
 
     xit('should render the WhatToDo component in the dashboard', () => {
         render(<Dashboard newIssue='' />);
-        const whatToDoButton = screen.getByText('What To Do');
-        expect(whatToDoButton).toBeInTheDocument();
+        const whatToDoHeader = screen.getByText('What To Do');
+        expect(whatToDoHeader).toBeInTheDocument();
     });
 
     xit('should render the Logs component in the dashboard', () => {
         render(<Dashboard newIssue='' />);
-        const logsButton = screen.getByText('Maintenance Logs');
-        expect(logsButton).toBeInTheDocument();
+        const logsHeader = screen.getByText('Maintenance Logs');
+        expect(logsHeader).toBeInTheDocument();
     });
 })
