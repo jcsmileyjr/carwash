@@ -74,7 +74,7 @@ export default function Maintenance () {
             <div className="m-12 flex flex-col gap-8">
                 <div className='flex flex-row'>
                     <Image priority={false} src={Calendar} width={40} height={30} alt="" className='h-8 mr-4 self-end' />
-                    <input aria-label="Date" type="date" value={date} onChange={(e) => setDate(e.target.value)}  className="border-b-4 border-black w-full bg-white text-black"/>
+                    <input data-testid="date" aria-label="Date" type="date" value={date} onChange={(e) => setDate(e.target.value)}  className="border-b-4 border-black w-full bg-white text-black"/>
                 </div>
                 <div className='flex flex-row align-center'>
                     <input id="pickTrash" type="checkbox" checked={pickTrash} onChange={(e) => setPickTrash(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow text-black"/>
