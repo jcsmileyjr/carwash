@@ -30,7 +30,7 @@ const getMaintenanceData = async () => {
         {},
         {
           // You can set any of the `cache` and `next` options as you would on a standard `fetch` call
-          cache: 'force-cache',
+          cache: 'no-store',
           next: {tags: ['pages']},
         },
     )
