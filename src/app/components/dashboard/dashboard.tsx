@@ -33,7 +33,7 @@ export default async function Dashboard({newIssue}: {newIssue: string}) {
           cache: 'force-cache',
           next: {tags: ['pages']},
         },
-      )
+    )
     //const maintenanceData = await getMaintenanceData() as Issue[]; // Keeping this here for reference
 
     if (newIssue !== "" && newIssue !== undefined) {
