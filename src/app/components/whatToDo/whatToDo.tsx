@@ -48,10 +48,10 @@ export default function WhatToDo() {
                     <div className='flex justify-center relative mt-4'>
                         <h1 className='text-xl text-black font-bold'> What To Do </h1>
                         {!openSummary &&
-                            <Image priority={false} src={CaretUp} width={15}  alt="" className='absolute top-2 end-12' />
+                            <Image priority={false} src={CaretDown} width={15}  alt="" className='absolute top-2 end-12' />
                         }
                         {openSummary &&
-                            <Image priority={false} src={CaretDown} width={15}  alt="" className='absolute top-2 end-12' />
+                            <Image priority={false} src={CaretUp} width={15}  alt="" className='absolute top-2 end-12' />
                         }                        
                     </div>
                     <div className='flex justify-center gap-2'>
