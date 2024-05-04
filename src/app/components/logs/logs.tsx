@@ -10,7 +10,7 @@ import moment from 'moment'; // NPM module that converts date objects to strings
  * @return {Issue[]} - The sorted array of Issue objects, or a slice of the first 30 elements if the sorted array has more than 30 elements.
  */
 const sortIssuesByIssueID = (logs : Issue[]) => {
-    let sortedLogs = logs.sort((a, b) => moment(b.date, 'DD-MM-YYYY').diff(moment(a.date, 'DD-MM-YYYY')));
+    let sortedLogs = logs.sort((a, b) => moment(b.date, 'YYYY-MM-DD').diff(moment(a.date, 'YYYY-MM-DD')));
     if (sortedLogs.length > 30) {
         return sortedLogs.slice(0,30);
     } else {
