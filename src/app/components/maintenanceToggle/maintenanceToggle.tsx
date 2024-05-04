@@ -25,7 +25,9 @@ const MaintenanceToggle = ({issue} : {issue: Issue}) => {
                         {openLog && <Image priority={false} src={CaretDown} width={15}  alt="" className='absolute top-2 left-40' />}
                     </div>
                 </summary>
-                <Issues issue={issue} imageType='hammer' />
+                <div className='ml-4'>
+                    <Issues issue={issue} imageType='hammer' />
+                </div>
             </details>
         </div>
     );

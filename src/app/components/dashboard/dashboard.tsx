@@ -59,6 +59,10 @@ export default async function Dashboard({newIssue}: {newIssue: string}) {
             <CTAGroup />
             <WhatToDo />
             <Logs maintenanceLogs={maintenanceData} />
+            <ul>
+                <li>apple</li>
+                <li>banana</li>
+            </ul>
         </main>
     );
 }
