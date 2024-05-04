@@ -19,13 +19,13 @@ const isDuplicateIssue = (issue: Issue, issueArray: Issue[]) => {
 const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_API_PROJECT_ID,
     dataset: 'production',
-    useCdn: true, // set to `false` to bypass the edge cache
+    useCdn: false, // set to `false` to bypass the edge cache
     apiVersion: '2023-05-03', // use current date (YYYY-MM-DD) to target the latest API version
     token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN,
 })
 
-export default async function Dashboard({newIssue}: {newIssue: string}) {
-    const maintenanceData = await client.fetch<Issue[]>(
+const getMaintenanceData = async () => {
+    return await client.fetch<Issue[]>(
         `*[_type == "issue"]`,
         {},
         {
@@ -34,6 +34,10 @@ export default async function Dashboard({newIssue}: {newIssue: string}) {
           next: {tags: ['pages']},
         },
     )
+}
+
+export default async function Dashboard({newIssue}: {newIssue: string}) {
+    const maintenanceData = await getMaintenanceData() as Issue[];
     //const maintenanceData = await getMaintenanceData() as Issue[]; // Keeping this here for reference
 
     if (newIssue !== "" && newIssue !== undefined) {
