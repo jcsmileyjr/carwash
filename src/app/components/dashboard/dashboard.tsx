@@ -2,7 +2,7 @@ import CTAGroup from '../ctaGroup/ctaGroup';
 import WhatToDo from '../whatToDo/whatToDo';
 import Logs from '../logs/logs';
 import Issue from '../../Types/issue';
-//import getMaintenanceData from '../../utils/getMaintenanceData';
+//import getMaintenanceData from '../../utils/getMaintenanceData'; // Keeping this here for reference
 import {createClient} from '@sanity/client';
 
 /**
@@ -17,10 +17,11 @@ const isDuplicateIssue = (issue: Issue, issueArray: Issue[]) => {
 }
 
 const client = createClient({
-    projectId: process.env.LOCAL_PROJECT_ID,
+    projectId: process.env.NEXT_PUBLIC_SANITY_API_PROJECT_ID,
     dataset: 'production',
     useCdn: true, // set to `false` to bypass the edge cache
     apiVersion: '2023-05-03', // use current date (YYYY-MM-DD) to target the latest API version
+    token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN,
 })
 
 export default async function Dashboard({newIssue}: {newIssue: string}) {
@@ -33,12 +34,17 @@ export default async function Dashboard({newIssue}: {newIssue: string}) {
           next: {tags: ['pages']},
         },
       )
-    //const maintenanceData = await getMaintenanceData() as Issue[];
-    //console.log("data", maintenanceData);
+    //const maintenanceData = await getMaintenanceData() as Issue[]; // Keeping this here for reference
 
     if (newIssue !== "" && newIssue !== undefined) {
         const convertedIssueToJSON = JSON.parse(newIssue);
         if (!isDuplicateIssue(convertedIssueToJSON, maintenanceData)) {
+            // Add the new issue to the database
+            await client.create({
+                _type: 'issue',
+                ...convertedIssueToJSON,
+            })
+
             maintenanceData.push(convertedIssueToJSON)
         }
     }
