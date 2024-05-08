@@ -26,7 +26,8 @@ const MaintenanceToggle = ({issue} : {issue: Issue}) => {
                     </div>
                 </summary>
                 <div className='ml-4'>
-                    <Issues issue={issue} imageType='hammer' />
+                    {issue.logType === "action" && <Issues issue={issue} imageType='hammer' />}
+                    {issue.logType === "maintenance" && <Issues issue={issue} imageType='warning' />}
                 </div>
             </details>
         </div>
