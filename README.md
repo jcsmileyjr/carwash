@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# S & F Maintenance 
 
-## Getting Started
+A maintenance list and log for a family owned car wash business. 
 
-First, run the development server:
+[Click to view: S & F Maintenance Assistant](https://sfmaintenance.netlify.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![Landing page UI](./src/images/ui-medium-sized.png)
+
+## Features
+1. Provide a menu of potential maintenance tasks that are selected via checkboxes.
+2. Logs completed actions.
+3. Provides a platform for documenting any issues discovered at the car wash.
+
+### Testing
+Component testing with Jest. Example below:
+```
+    it('should display the Pick Up trash checkbox and be able to check it on the maintenance page', async () => {
+        render(<Maintenance />);
+        const user = userEvent.setup();
+        const checkbox = screen.getByRole('checkbox', { name: 'Pick up trash' });
+        expect(checkbox).toBeInTheDocument();
+
+        await user.click(checkbox);
+        expect(checkbox).toBeChecked();
+    })
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Built with
+- **Next.js** is a frontend JavaScript framework, based on React but with server components/actions, used for displaying the user interface. 
+- **TailwindCSS** is a CSS library utilized to quickly style the application. 
+- **Jest** serves as a component testing framework. 
+- **Netlify** is the hosting platform employed for hosting the application.
+- **Sanity.io** is a backend as a service platform used for data retrieval and storage.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Author
+- Website - [JC Smiley](https://www.jcsmileyjr.com)
+- Twitter - [@JCSmiley4](https://twitter.com/JCSmiley4)
+- LinkedIn - [jcsmileyjr](https://www.linkedin.com/in/jcsmileyjr/)
