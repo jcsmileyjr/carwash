@@ -4,6 +4,8 @@ A maintenance list and log for a family owned car wash business.
 
 [Click to view: S & F Maintenance Assistant](https://sfmaintenance.netlify.app/)
 
+![Landing page UI](./src/images/ui-medium-sized.png)
+
 ## Features
 1. Provide a menu of potential maintenance tasks that are selected via checkboxes.
 2. Logs completed actions.
@@ -24,7 +26,7 @@ Component testing with Jest. Example below:
 ```
 
 ## Built with
-- **Next.js** is a frontend JavaScript framework used for displaying the user interface. 
+- **Next.js** is a frontend JavaScript framework, based on React but with server components/actions, used for displaying the user interface. 
 - **TailwindCSS** is a CSS library utilized to quickly style the application. 
 - **Jest** serves as a component testing framework. 
 - **Netlify** is the hosting platform employed for hosting the application.
