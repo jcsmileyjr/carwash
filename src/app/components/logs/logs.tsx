@@ -30,16 +30,22 @@ const sortIssuesByIssueID = (logs : Issue[]) => {
  */
 const combineLogs = (logs : Issue[]) => {
     let sortedlogs: Issue[] = [];
-
+    // Loop through the logs array, two values at a time.
     for (let i = 0; i < logs.length; i++) {
         for (let j = i + 1; j < logs.length; j++) {
-            if (moment(logs[i].date).isSame(logs[j].date)) {
-                if(logs[i].logType !== logs[j].logType) {
+            if (moment(logs[i].date).isSame(logs[j].date)) { // Checking if the dates are the same
+                if(logs[i].logType !== logs[j].logType) { // If the log types are different, push the first one into the new array
                     sortedlogs.push(logs[i]);
                 } else {
-                    let newIssue: Issue = combineIssues(logs[i], logs[j]);
-                    logs.splice(j, 1);
-                    sortedlogs.splice(1, 0, newIssue);
+                    if(logs[i].logType === 'action') {
+                        let newIssue: Issue = combineActionIssues(logs[i], logs[j]); // Combine action issues
+                        logs.splice(j, 1); // Remove the second issue
+                        sortedlogs.splice(i, 0, newIssue); // Remove the first issue and replace with new combined issue
+                    } else { 
+                        let newIssue: Issue = combineMaintenanceIssues(logs[i], logs[j]);
+                        logs.splice(j, 1);
+                        sortedlogs.splice(i, 0, newIssue);
+                    }
                 }
             } else {
                 sortedlogs.push(logs[i]);
@@ -48,7 +54,14 @@ const combineLogs = (logs : Issue[]) => {
     }
 }
 
-const combineIssues = (issueA: Issue, issueB: Issue) => {
+/**
+ * Combines the action issues from two Issue objects by sorting through the object keys.
+ *
+ * @param {Issue} issueA - The first Issue object.
+ * @param {Issue} issueB - The second Issue object.
+ * @return {Issue} - The combined Issue object.
+ */
+const combineActionIssues = (issueA: Issue, issueB: Issue) => {
     for (const [key, value] of Object.entries(issueA)) {
         if (key === 'pickTrash' || key === 'cleanVacuum' || key === 'dumpTrashCans' || key === 'checkBayEquipment' || key === 'mowLawn' || key === 'checkVacuumHoses') {
             if(issueB[key].checked === true) {
@@ -56,6 +69,11 @@ const combineIssues = (issueA: Issue, issueB: Issue) => {
             }
         }
     }
+    return issueA;        
+}
+
+const combineMaintenanceIssues = (issueA: Issue, issueB: Issue) => {
+    issueA.content = issueA.content + '. ' + issueB.content;
     return issueA;        
 }
 
