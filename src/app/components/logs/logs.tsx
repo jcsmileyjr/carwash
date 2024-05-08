@@ -4,6 +4,7 @@ import moment from 'moment'; // NPM module that converts date objects to strings
 
 /**
  * Sorts an array of Issue objects by their date property in descending order.
+ * Combines dates with the same issue type.
  * If the sorted array has more than 30 elements, it returns a slice of the first 30 elements.
  *
  * @param {Issue[]} logs - The array of Issue objects to be sorted.
@@ -14,8 +15,48 @@ const sortIssuesByIssueID = (logs : Issue[]) => {
     if (sortedLogs.length > 30) {
         return sortedLogs.slice(0,30);
     } else {
+        combineLogs(sortedLogs);
         return sortedLogs;
     }
+}
+
+
+/**
+ * Get a combined list of sorted logs
+ * Compare two logs for the same date. If the dates are the same, then combine them.
+ * Combine by checking all the properties.
+ * @param logs - The array of logs to combine.
+ * @return void
+ */
+const combineLogs = (logs : Issue[]) => {
+    let sortedlogs: Issue[] = [];
+
+    for (let i = 0; i < logs.length; i++) {
+        for (let j = i + 1; j < logs.length; j++) {
+            if (moment(logs[i].date).isSame(logs[j].date)) {
+                if(logs[i].logType !== logs[j].logType) {
+                    sortedlogs.push(logs[i]);
+                } else {
+                    let newIssue: Issue = combineIssues(logs[i], logs[j]);
+                    logs.splice(j, 1);
+                    sortedlogs.splice(1, 0, newIssue);
+                }
+            } else {
+                sortedlogs.push(logs[i]);
+            }   
+        }    
+    }
+}
+
+const combineIssues = (issueA: Issue, issueB: Issue) => {
+    for (const [key, value] of Object.entries(issueA)) {
+        if (key === 'pickTrash' || key === 'cleanVacuum' || key === 'dumpTrashCans' || key === 'checkBayEquipment' || key === 'mowLawn' || key === 'checkVacuumHoses') {
+            if(issueB[key].checked === true) {
+                issueA[key].checked = true;
+            }
+        }
+    }
+    return issueA;        
 }
 
 /**
