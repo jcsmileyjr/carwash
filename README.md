@@ -24,11 +24,11 @@ Component testing with Jest. Example below:
 ```
 
 ## Built with
-- Nextjs - Frontend JavaScript framework
-- TailwindCSS - CSS library
--  Jest - Testing framework
-- Netlify - Web service to host the app
-- Sanity.io - Backend service to 
+- **Next.js** is a frontend JavaScript framework used for displaying the user interface. 
+- **TailwindCSS** is a CSS library utilized to quickly style the application. 
+- **Jest** serves as a component testing framework. 
+- **Netlify** is the hosting platform employed for hosting the application.
+- **Sanity.io** is a backend as a service platform used for data retrieval and storage.
 
 ## Author
 - Website - [JC Smiley](https://www.jcsmileyjr.com)
