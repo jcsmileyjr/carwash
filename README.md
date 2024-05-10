@@ -11,7 +11,7 @@ A maintenance list and log for a family owned car wash business.
 2. Logs completed actions.
 3. Provides a platform for documenting any issues discovered at the car wash.
 
-### Testing
+## Testing
 Component testing with Jest. Example below:
 ```
     it('should display the Pick Up trash checkbox and be able to check it on the maintenance page', async () => {
@@ -31,6 +31,18 @@ Component testing with Jest. Example below:
 - **Jest** serves as a component testing framework. 
 - **Netlify** is the hosting platform employed for hosting the application.
 - **Sanity.io** is a backend as a service platform used for data retrieval and storage.
+
+## Get Started
+1. Clone the repo
+2. In the terminal for the carwash directory, type "npm install" to install the libraries.
+3. Because the repo dosen't come with the needed environment variables, you will need to enable the API to make an fake call to get dummy data and NOT call the production database. 
+
+**On the file Dashboard.tsx in the components folder**
+- un-comment line 5 (dummy API call)
+- comment out lines 27-37 (production API). 
+- comment out lines 46-49 
+
+4. In the terminal, type "npm run dev"
 
 ## Author
 - Website - [JC Smiley](https://www.jcsmileyjr.com)
