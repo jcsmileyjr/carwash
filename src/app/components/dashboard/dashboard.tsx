@@ -24,7 +24,7 @@ const client = createClient({
     token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN,
 })
 
-const getMaintenanceData = async () => {
+const getMaintenanceData = async () : Promise<Issue[]> => {
     return await client.fetch<Issue[]>(
         `*[_type == "issue"]`,
         {},
@@ -37,8 +37,7 @@ const getMaintenanceData = async () => {
 }
 
 export default async function Dashboard({newIssue}: {newIssue: string}) {
-    const maintenanceData = await getMaintenanceData() as Issue[];
-    //const maintenanceData = await getMaintenanceData() as Issue[]; // Keeping this here for reference
+    const maintenanceData = await getMaintenanceData();
 
     if (newIssue !== "" && newIssue !== undefined) {
         const convertedIssueToJSON = JSON.parse(newIssue);
