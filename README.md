@@ -11,20 +11,6 @@ A maintenance list and log for a family owned car wash business.
 2. Logs completed actions.
 3. Provides a platform for documenting any issues discovered at the car wash.
 
-## Testing
-Component testing with Jest. Example below:
-```
-    it('should display the Pick Up trash checkbox and be able to check it on the maintenance page', async () => {
-        render(<Maintenance />);
-        const user = userEvent.setup();
-        const checkbox = screen.getByRole('checkbox', { name: 'Pick up trash' });
-        expect(checkbox).toBeInTheDocument();
-
-        await user.click(checkbox);
-        expect(checkbox).toBeChecked();
-    })
-```
-
 ## Built with
 - **Next.js** is a frontend JavaScript framework, based on React but with server components/actions, used for displaying the user interface. 
 - **TailwindCSS** is a CSS library utilized to quickly style the application. 
@@ -43,6 +29,23 @@ Component testing with Jest. Example below:
 - comment out lines 46-49 
 
 4. In the terminal, type "npm run dev"
+
+## Testing
+### Getting Started with Testing
+1. In a terminal, type "npm run test" to run the Jest test runner.  
+
+### Component testing with Jest. Example below:
+```
+    it('should display the Pick Up trash checkbox and be able to check it on the maintenance page', async () => {
+        render(<Maintenance />);
+        const user = userEvent.setup();
+        const checkbox = screen.getByRole('checkbox', { name: 'Pick up trash' });
+        expect(checkbox).toBeInTheDocument();
+
+        await user.click(checkbox);
+        expect(checkbox).toBeChecked();
+    })
+```
 
 ## Author
 - Website - [JC Smiley](https://www.jcsmileyjr.com)
