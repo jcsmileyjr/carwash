@@ -22,7 +22,11 @@
         },
        "checkVacuumHoses": {
                 "content": "Check vacuums hose’s heads for obstructions",
-                "checked": false
+                "checked": true
+        },
+        "checkVacuumCoinAccepter": {
+                "content": "Check vacuums coin accepter for obstructions",
+                "checked": true
         },
         "checkBayEquipment": {
                 "content": "Check each bay wand or brush to ensure it works.",
@@ -54,6 +58,10 @@
                 "content": "Check vacuums hose’s heads for obstructions",
                 "checked": false
         },
+        "checkVacuumCoinAccepter": {
+                "content": "Check vacuums coin accepter for obstructions",
+                "checked": false
+        },        
         "checkBayEquipment": {
                 "content": "Check each bay wand or brush to ensure it works.",
                 "checked": true
@@ -84,6 +92,10 @@
                 "content": "Check vacuums hose’s heads for obstructions",
                 "checked": false
         },
+        "checkVacuumCoinAccepter": {
+                "content": "Check vacuums coin accepter for obstructions",
+                "checked": false
+        },        
         "checkBayEquipment": {
                 "content": "Check each bay wand or brush to ensure it works.",
                 "checked": false
@@ -99,8 +111,8 @@
                 "checked": false
         },
         "cleanVacuum": {
-            "content": "Clean out bottom of vaccum",
-            "checked": false
+                "content": "Clean out bottom of vaccum",
+                "checked": false
         },
         "dumpTrashCans": {
                 "content": "Dump trash cans",
@@ -110,13 +122,17 @@
                 "content": "Cut or weed the lawn",
                 "checked": false
         },
-       "checkVacuumHoses": {
+        "checkVacuumHoses": {
                 "content": "Check vacuums hose’s heads for obstructions",
                 "checked": false
         },
+        "checkVacuumCoinAccepter": {
+                "content": "Check vacuums coin accepter for obstructions",
+                "checked": false
+        },        
         "checkBayEquipment": {
                 "content": "Check each bay wand or brush to ensure it works.",
                 "checked": false
         }
-    }        
+}        
 ]

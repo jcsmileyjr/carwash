@@ -32,9 +32,10 @@ export default function Maintenance () {
     const [checkBayEquipment, setCheckBayEquipment] = useState(false);
     const [mowLawn, setMowLawn] = useState(false);
     const [checkVacuumHoses, setCheckVacuumHoses] = useState(false);
+    const [checkVacuumCoinAccepter, setCheckVacuumCoinAccepter] = useState(false);
 
     const handleSubmit = () => {
-       const results = {
+        const results = {
             "issueID":  uuidv4(),
             "date":date,
             "logType": "action",
@@ -62,7 +63,11 @@ export default function Maintenance () {
             "checkVacuumHoses": {
                 content: defaultIssue['checkVacuumHoses'].content,
                 checked: checkVacuumHoses
-            }
+            },
+            "checkVacuumCoinAccepter": {
+                content: defaultIssue['checkVacuumCoinAccepter'].content,
+                checked: checkVacuumCoinAccepter
+            }            
         }
         return JSON.stringify(results);
     }
@@ -100,6 +105,10 @@ export default function Maintenance () {
                     <input id="checkVacuumHoses" type="checkbox" checked={checkVacuumHoses} onChange={(e) => setCheckVacuumHoses(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow text-black"/>
                     <label htmlFor="checkVacuumHoses" className='pl-4 w-4/5 text-black'>{defaultIssue['checkVacuumHoses'].content}</label>
                 </div> 
+                <div className='flex flex-row align-center'>
+                    <input id="checkVacuumCoinAccepter" type="checkbox" checked={checkVacuumCoinAccepter} onChange={(e) => setCheckVacuumCoinAccepter(e.target.checked)} className="h-8 w-8 self-center border-4 border-solid border-black accent-goldYellow text-black"/>
+                    <label htmlFor="checkVacuumCoinAccepter" className='pl-4 w-4/5 text-black'>{defaultIssue['checkVacuumCoinAccepter'].content}</label>
+                </div>
             </div>
             <CTAButton content="Save" route="/" appData={handleSubmit()} />
             <BackButton content="Don't Save, Go Back" route="/"/>

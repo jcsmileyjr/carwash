@@ -4,27 +4,31 @@
 	"logType": "action",
 	"content": null,
 	"pickTrash": {
-			"content": "Pick up trash",
-			"checked": false
+		"content": "Pick up trash",
+		"checked": false
 	},
 	"cleanVacuum": {
         "content": "Clean out bottom of vaccum",
         "checked": false
     },
     "dumpTrashCans": {
-			"content": "Dump trash cans",
-			"checked": false
+		"content": "Dump trash cans",
+		"checked": false
 	},
     "mowLawn": {
-			"content": "Cut or weed the lawn",
-			"checked": false
+		"content": "Cut or weed the lawn",
+		"checked": false
 	},
-   "checkVacuumHoses": {
-			"content": "Check vacuums hose’s heads for obstructions",
-			"checked": false
+	"checkVacuumHoses": {
+		"content": "Check vacuums hose’s heads for obstructions",
+		"checked": false
 	},
+	"checkVacuumCoinAccepter": {
+		"content": "Check vacuums coin accepter for obstructions (pennies, nickels,etc.)",
+		"checked": false
+	},	
     "checkBayEquipment": {
-			"content": "Check each bay wand or brush to ensure it works.",
-			"checked": false
+		"content": "Check each bay wand or brush to ensure it works.",
+		"checked": false
 	}
 }

@@ -24,7 +24,7 @@ const Issues = ({issue, imageType}: {issue: Issue, imageType: string}) => {
         return (
             <div className='mx-12'>
                 {Object.keys(issue).map((key) => {
-                    if (key === 'pickTrash' || key === 'cleanVacuum' || key === 'dumpTrashCans' || key === 'checkBayEquipment' || key === 'mowLawn' || key === 'checkVacuumHoses') {
+                    if (key === 'pickTrash' || key === 'cleanVacuum' || key === 'dumpTrashCans' || key === 'checkBayEquipment' || key === 'mowLawn' || key === 'checkVacuumHoses' || key === 'checkVacuumCoinAccepter') {
                         const action = issue[key];
                         if(action.checked === true) {
                             return (

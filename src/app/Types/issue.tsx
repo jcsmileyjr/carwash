@@ -28,4 +28,8 @@ export default interface Issue {
 			content: string,
 			checked: boolean
 	},
+    checkVacuumCoinAccepter: {
+		content: string,
+		checked: boolean
+	},	
 };

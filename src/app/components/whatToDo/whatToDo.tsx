@@ -28,6 +28,7 @@ function createCollapseIssue() {
     const collapseIssue = JSON.parse(JSON.stringify(WhatToDoIssue));
     collapseIssue.mowLawn.checked = true; 
     collapseIssue.checkVacuumHoses.checked = true;
+    collapseIssue.checkVacuumCoinAccepter.checked = true;
     return collapseIssue;
 }
 
